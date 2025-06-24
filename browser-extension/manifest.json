@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "ChatGPT Conversation Saver",
+    "version": "1.0",
+    "description": "Save ChatGPT conversations to your Supabase database",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://chat.openai.com/*",
+      "https://chatgpt-supabase-api.onrender.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Save Conversation"
+    }
+  }
